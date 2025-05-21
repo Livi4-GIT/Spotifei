@@ -15,7 +15,7 @@ public class SpotDAO {
     }
     
     public ResultSet consultar(Pessoa_Model pessoa) throws SQLException{
-        String sql = "select * from aluno where usuario = ? and senha = ?";
+        String sql = "select * from pessoa where nome = ? and senha = ?";
         PreparedStatement statement = conn.prepareStatement(sql);
         statement.setString(1, pessoa.getNome());
         statement.setString(2, pessoa.getSenha());
@@ -26,7 +26,7 @@ public class SpotDAO {
     }
     
     public void inserir(Pessoa_Model pessoa) throws SQLException{
-        String sql = "insert into aluno (nome, usuario, senha) values ('" +
+        String sql = "insert into pessoa (nome, senha) values ('" +
                     pessoa.getNome() + "','" +
                     pessoa.getSenha() + "')";
         PreparedStatement statement = conn.prepareStatement(sql);
@@ -35,7 +35,7 @@ public class SpotDAO {
     }
     
     public void atualizar(Pessoa_Model pessoa) throws SQLException{
-        String sql = "update aluno set senha = ? where usuario = ?";
+        String sql = "update pessoa set senha = ? where nome = ?";
         PreparedStatement statement = conn.prepareStatement(sql);
         statement.setString(1, pessoa.getSenha());
         statement.setString(2, pessoa.getNome());
@@ -44,7 +44,7 @@ public class SpotDAO {
     }
     
     public void remover(Pessoa_Model pessoa) throws SQLException{
-        String sql = "delete from aluno where usuario = ?";
+        String sql = "delete from pessoa where nome = ?";
         PreparedStatement statement = conn.prepareStatement(sql);
         statement.setString(1, pessoa.getNome());
         statement.execute();
