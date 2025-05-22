@@ -19,7 +19,7 @@ public class MusicaDAO {
     }
     
     public ResultSet consultar(Musica_Model musica, Artista_Model artista) throws SQLException{
-        String sql = "select * from musica where nome_musica = ? and nome_artista = ?";
+        String sql = "select * from musicas where nome_musica = ? and nome_artista = ?";
         PreparedStatement statement = conn.prepareStatement(sql);
         statement.setString(1, musica.getNome_musica());
         statement.setString(2, artista.getNome());
@@ -30,7 +30,7 @@ public class MusicaDAO {
     }
     
     public void inserir(Musica_Model pessoa, Artista_Model artista) throws SQLException{
-        String sql = "insert into musica (nome-musica, nome_artista) values ('" +
+        String sql = "insert into musicas (nome-musica, nome_artista) values ('" +
                     pessoa.getNome_musica() + "','" +
                     pessoa.getNome() + "')";
         PreparedStatement statement = conn.prepareStatement(sql);
@@ -39,7 +39,7 @@ public class MusicaDAO {
     }
     
     public void atualizar(Musica_Model musica, Artista_Model artista) throws SQLException{
-        String sql = "update musica set nome_musica = ? where nome_artista = ?";
+        String sql = "update musicas set nome_musica = ? where nome_artista = ?";
         PreparedStatement statement = conn.prepareStatement(sql);
         statement.setString(1, musica.getNome_musica());
         statement.setString(2, artista.getNome());
@@ -48,7 +48,7 @@ public class MusicaDAO {
     }
     
     public void remover(Musica_Model musica) throws SQLException{
-        String sql = "delete from musica where nome_musica = ?";
+        String sql = "delete from musicas where nome_musica = ?";
         PreparedStatement statement = conn.prepareStatement(sql);
         statement.setString(1, musica.getNome_musica());
         statement.execute();
