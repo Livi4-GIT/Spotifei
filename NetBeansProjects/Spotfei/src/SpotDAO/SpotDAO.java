@@ -31,7 +31,6 @@ public class SpotDAO {
                     pessoa.getSenha() + "')";
         PreparedStatement statement = conn.prepareStatement(sql);
         statement.execute();
-        conn.close();
     }
     
     public void atualizar(Pessoa_Model pessoa) throws SQLException{
@@ -40,7 +39,6 @@ public class SpotDAO {
         statement.setString(1, pessoa.getSenha());
         statement.setString(2, pessoa.getNome());
         statement.execute();
-        conn.close();
     }
     
     public void remover(Pessoa_Model pessoa) throws SQLException{
@@ -48,7 +46,6 @@ public class SpotDAO {
         PreparedStatement statement = conn.prepareStatement(sql);
         statement.setString(1, pessoa.getNome());
         statement.execute();
-        conn.close();
         
     }
 }

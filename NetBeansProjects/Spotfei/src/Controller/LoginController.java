@@ -4,7 +4,21 @@
  */
 package Controller;
 
-/**
- *
- * @author lilir
- */
+import SpotDAO.UsuarioDAO;
+import java.sql.Connection;
+
+public class LoginController {
+    private UsuarioDAO usuariodao;
+    
+    public LoginController(Connection conn){
+        this.usuariodao = new UsuarioDAO(conn);
+       
+    }
+    public boolean fazerLogin(String nome, String senha){
+        return usuariodao.buscarUsuario(nome,senha);
+    }
+    
+   public boolean cadastrarUsuario(String nome, String senha){
+       return usuariodao.cadastrarUsuario(nome,senha);
+   }
+}

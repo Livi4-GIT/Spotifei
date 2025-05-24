@@ -29,13 +29,13 @@ public class MusicaDAO {
         
     }
     
-    public void inserir(Musica_Model pessoa, Artista_Model artista) throws SQLException{
+    public void inserir(Musica_Model musica, Artista_Model artista) throws SQLException{
         String sql = "insert into musicas (nome-musica, nome_artista) values ('" +
-                    pessoa.getNome_musica() + "','" +
-                    pessoa.getNome() + "')";
+                    musica.getNome_musica() + "','" +
+                    musica.getNome() + "')";
         PreparedStatement statement = conn.prepareStatement(sql);
         statement.execute();
-        conn.close();
+
     }
     
     public void atualizar(Musica_Model musica, Artista_Model artista) throws SQLException{
@@ -44,7 +44,7 @@ public class MusicaDAO {
         statement.setString(1, musica.getNome_musica());
         statement.setString(2, artista.getNome());
         statement.execute();
-        conn.close();
+
     }
     
     public void remover(Musica_Model musica) throws SQLException{
@@ -52,7 +52,7 @@ public class MusicaDAO {
         PreparedStatement statement = conn.prepareStatement(sql);
         statement.setString(1, musica.getNome_musica());
         statement.execute();
-        conn.close();
+
         
     }
 }

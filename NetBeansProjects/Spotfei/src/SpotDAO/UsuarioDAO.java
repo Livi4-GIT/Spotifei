@@ -11,6 +11,7 @@ public class UsuarioDAO {
 
     private Connection conn;
 
+
     public UsuarioDAO() throws SQLException {
         this.conn = Conexao.getConexao();
     }

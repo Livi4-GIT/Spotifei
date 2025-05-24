@@ -3,42 +3,51 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package Model;
+
+import java.util.ArrayList;
+
+
 /**
  *
  * @author uniflseveri
  */
 public class Playlist_Model {
-    private String nome_playlist;
-    private Musica_Model nome_musica;
-
-    public Playlist_Model(String nome_playlist, Musica_Model nome_musica) {
-        this.nome_playlist = nome_playlist;
-        this.nome_musica = nome_musica;
-    }
+    private String nomePlaylist;
+    private int idUsuario;
+    private ArrayList<Musica_Model> musicas;
 
     public Playlist_Model() {
     }
 
-    public String getNome_playlist() {
-        return nome_playlist;
+    public Playlist_Model(String nomePlaylist, int idUsuario, ArrayList<Musica_Model> musicas) {
+        this.nomePlaylist = nomePlaylist;
+        this.idUsuario = idUsuario;
+        this.musicas = musicas;
     }
 
-    public void setNome_playlist(String nome_playlist) {
-        this.nome_playlist = nome_playlist;
+    public String getNomePlaylist() {
+        return nomePlaylist;
     }
 
-    public Musica_Model getNome_musica() {
-        return nome_musica;
+    public void setNomePlaylist(String nomePlaylist) {
+        this.nomePlaylist = nomePlaylist;
     }
 
-    public void setNome_musica(Musica_Model nome_musica) {
-        this.nome_musica = nome_musica;
+    public int getIdUsuario() {
+        return idUsuario;
     }
 
-    @Override
-    public String toString() {
-        return "Playlist_Model{" + "nome_playlist=" + nome_playlist + ", nome_musica=" + nome_musica + '}';
+    public void setIdUsuario(int idUsuario) {
+        this.idUsuario = idUsuario;
     }
-    
-    
+
+    public ArrayList<Musica_Model> getMusicas() {
+        return musicas;
+    }
+
+    public void setMusicas(ArrayList<Musica_Model> musicas) {
+        this.musicas = musicas;
+    }
+
+   
 }
